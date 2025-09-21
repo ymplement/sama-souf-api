@@ -4,3 +4,34 @@ spring:
 
 server:
   port: 8080
+  max-http-header-size: 16384
+  max-request-size: 10485760 # 10 MB
+  max-response-size: 10485760 # 10 MB
+  servlet:
+    context-path: /api
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  path: /management
+
+  management:
+    tracing:
+      sampling:
+        probability: 1.0
+    endpoints:
+      web:
+        exposure:
+          include: prometheus
+    metrics:
+      distribution:
+        percentiles-histogram:
+          http:
+            server:
+              requests: true
+
+  logging:
+    pattern:
+      level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
