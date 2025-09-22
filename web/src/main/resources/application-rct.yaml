@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/sama_souf_db
-    username: username
-    password: password
+    username: postgres
+    password: Nicola93
     driver-class-name: org.postgresql.Driver
 
   jpa:
