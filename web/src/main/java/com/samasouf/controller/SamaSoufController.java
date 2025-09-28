@@ -7,15 +7,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import com.samasouf.service.MyUserService;
 
+import lombok.AllArgsConstructor;
+
 @RestController
-class MyController {
+@AllArgsConstructor
+class SamaSoufController {
 
-    private static final Logger log = LoggerFactory.getLogger(MyController.class);
+    private static final Logger log = LoggerFactory.getLogger(SamaSoufController.class);
     private final MyUserService myUserService;
-
-    MyController(MyUserService myUserService) {
-        this.myUserService = myUserService;
-    }
 
     @GetMapping("/user/{userId}")
     String userName(@PathVariable("userId") String userId) {

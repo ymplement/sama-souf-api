@@ -4,8 +4,6 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.samasouf.domain.common.Language;
-
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
@@ -19,11 +17,15 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.envers.Audited;
+
+import com.samasouf.domain.common.Language;
 
 @Setter
 @Getter
 @Entity
 @Table(name = "faq")
+@Audited
 public class Faq {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.SEQUENCE, generator = "faq_id_seq")

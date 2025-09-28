@@ -4,8 +4,6 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.samasouf.domain.common.AnnouncementTransaction;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -21,11 +19,15 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.envers.Audited;
+
+import com.samasouf.domain.common.AnnouncementTransaction;
 
 @Setter
 @Getter
 @Entity
 @Table(name = "announcement")
+@Audited
 public class Announcement {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "announcement_id_seq")

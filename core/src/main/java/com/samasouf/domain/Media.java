@@ -9,11 +9,13 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.envers.Audited;
 
 @Setter
 @Getter
 @Entity
 @Table(name = "media")
+@Audited
 public class Media {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.SEQUENCE, generator = "media_id_seq")

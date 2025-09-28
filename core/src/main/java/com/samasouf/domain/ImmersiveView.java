@@ -9,11 +9,13 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.envers.Audited;
 
 @Setter
 @Getter
 @Entity
 @Table(name = "immersive_view")
+@Audited
 public class ImmersiveView {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.SEQUENCE, generator = "immersive_view_id_seq")

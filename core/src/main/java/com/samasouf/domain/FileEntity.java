@@ -9,11 +9,13 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.envers.Audited;
 
 @Setter
 @Getter
 @Entity
 @Table(name = "file_store")
+@Audited
 public class FileEntity {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.SEQUENCE, generator = "file_entity_id_seq")

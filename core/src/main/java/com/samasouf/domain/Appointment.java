@@ -11,11 +11,13 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.envers.Audited;
 
 @Setter
 @Getter
 @Entity
 @Table(name = "appointment")
+@Audited
 public class Appointment {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.SEQUENCE, generator = "appointment_id_seq")

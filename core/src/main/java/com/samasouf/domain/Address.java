@@ -8,11 +8,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.envers.Audited;
 
 @Setter
 @Getter
 @Entity
 @Table(name = "address")
+@Audited
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "address_id_seq")

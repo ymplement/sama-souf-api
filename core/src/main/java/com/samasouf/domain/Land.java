@@ -16,11 +16,13 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.envers.Audited;
 
 @Setter
 @Getter
 @Entity
 @Table(name = "land")
+@Audited
 public class Land {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "land_id_seq")

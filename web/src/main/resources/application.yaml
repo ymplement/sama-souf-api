@@ -5,6 +5,18 @@ spring:
   profiles:
     active: rct
 
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        envers:
+          audit_table_suffix: _AUD
+          revision_field_name: REV
+          revision_type_field_name: REVTYPE
+          store_data_at_delete: true
+          default_schema: public
+
 server:
   port: 8080
   max-http-header-size: 16384
@@ -19,21 +31,6 @@ management:
       exposure:
         include: "*"
   path: /management
-
-  management:
-    tracing:
-      sampling:
-        probability: 1.0
-    endpoints:
-      web:
-        exposure:
-          include: prometheus
-    metrics:
-      distribution:
-        percentiles-histogram:
-          http:
-            server:
-              requests: true
 
   logging:
     pattern:

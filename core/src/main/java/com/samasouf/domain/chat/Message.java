@@ -3,9 +3,6 @@ package com.samasouf.domain.chat;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 
-import com.samasouf.domain.Announcement;
-import com.samasouf.domain.User;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,11 +13,16 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.envers.Audited;
+
+import com.samasouf.domain.Announcement;
+import com.samasouf.domain.User;
 
 @Setter
 @Getter
 @Entity
 @Table(name = "message")
+@Audited
 public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "message_id_seq")

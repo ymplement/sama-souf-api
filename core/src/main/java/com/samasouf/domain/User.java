@@ -5,18 +5,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import com.samasouf.domain.chat.Message;
-import com.samasouf.domain.common.AuthProvider;
-import com.samasouf.domain.params.Favorite;
-import com.samasouf.domain.params.LandPreference;
-import com.samasouf.domain.params.NotificationPreference;
-import com.samasouf.domain.params.Search;
-import com.samasouf.domain.params.SubscriptionPremium;
-import com.samasouf.domain.params.TypeNotification;
-import com.samasouf.domain.security.Confidentiality;
-import com.samasouf.domain.security.Role;
-import com.samasouf.domain.security.SecuritySettings;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -33,11 +21,25 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.envers.Audited;
+
+import com.samasouf.domain.chat.Message;
+import com.samasouf.domain.common.AuthProvider;
+import com.samasouf.domain.params.Favorite;
+import com.samasouf.domain.params.LandPreference;
+import com.samasouf.domain.params.NotificationPreference;
+import com.samasouf.domain.params.Search;
+import com.samasouf.domain.params.SubscriptionPremium;
+import com.samasouf.domain.params.TypeNotification;
+import com.samasouf.domain.security.Confidentiality;
+import com.samasouf.domain.security.Role;
+import com.samasouf.domain.security.SecuritySettings;
 
 @Setter
 @Getter
 @Entity
 @Table(name = "app_user")
+@Audited
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_id_seq")

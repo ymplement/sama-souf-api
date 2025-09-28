@@ -1,7 +1,5 @@
 package com.samasouf.domain.params;
 
-import com.samasouf.domain.User;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,11 +10,15 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.envers.Audited;
+
+import com.samasouf.domain.User;
 
 @Setter
 @Getter
 @Entity
 @Table(name = "notification_preference")
+@Audited
 public class NotificationPreference {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "notification_preference_id_seq")

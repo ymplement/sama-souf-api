@@ -2,8 +2,6 @@ package com.samasouf.domain.params;
 
 import java.time.OffsetDateTime;
 
-import com.samasouf.domain.User;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,11 +12,15 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.envers.Audited;
+
+import com.samasouf.domain.User;
 
 @Setter
 @Getter
 @Entity
 @Table(name = "subscription")
+@Audited
 public class SubscriptionPremium {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "subscription_id_seq")
