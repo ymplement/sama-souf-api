@@ -19,7 +19,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.envers.Audited;
 
-import com.samasouf.domain.common.Language;
+import com.samasouf.domain.valueObject.Language;
 
 @Setter
 @Getter

@@ -17,6 +17,6 @@ public class DocumentDTO {
     private String type;
     private String description;
     private boolean verified;
-    private Long announcementId;
-    private List<Long> fileIds;
+    private LandDTO land;
+    private List<FileEntityDTO> fileIds;
 }

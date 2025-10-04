@@ -1,6 +1,6 @@
 package com.samasouf.dto;
 
-import com.samasouf.domain.common.Visibility;
+import com.samasouf.domain.valueObject.Visibility;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -12,7 +12,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.envers.Audited;
 
-import com.samasouf.domain.common.Visibility;
+import com.samasouf.domain.valueObject.Visibility;
 
 @Getter
 @Setter

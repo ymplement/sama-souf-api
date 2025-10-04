@@ -1,8 +1,8 @@
-package com.samasouf.domain.common;
+package com.samasouf.domain.valueObject;
 
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-public enum AnnouncementTransaction {
+public enum AnnouncementStatus {
     SALE, RENT, EXCHANGE
 }

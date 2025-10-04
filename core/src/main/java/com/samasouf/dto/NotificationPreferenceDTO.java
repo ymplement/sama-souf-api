@@ -15,5 +15,5 @@ public class NotificationPreferenceDTO {
     private boolean sms;
     private boolean push;
     private boolean marketing;
-    private Long userId;
+    private UserDTO userId;
 }

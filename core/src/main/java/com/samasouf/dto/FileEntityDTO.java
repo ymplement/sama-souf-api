@@ -17,5 +17,5 @@ public class FileEntityDTO {
     private String mimeType;
     private String size;
     private boolean verified;
-    private Long documentId;
+    private DocumentDTO documentId;
 }

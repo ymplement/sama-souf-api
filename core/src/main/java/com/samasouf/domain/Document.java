@@ -39,8 +39,8 @@ public class Document {
     private boolean verified;
 
     @ManyToOne
-    @JoinColumn(name = "announcement_id")
-    private Announcement announcement;
+    @JoinColumn(name = "land_id")
+    private Land land;
 
     @OneToMany(mappedBy = "document", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<FileEntity> files = new ArrayList<>();

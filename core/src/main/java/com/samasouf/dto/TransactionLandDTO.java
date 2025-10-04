@@ -20,6 +20,6 @@ public class TransactionLandDTO {
     private String paymentStatus;
     private OffsetDateTime paymentDate;
     private String paymentMethod;
-    private Long userId;
-    private Long announcementId;
+    private UserDTO user;
+    private AnnouncementDTO announcement;
 }

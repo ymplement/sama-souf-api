@@ -16,5 +16,5 @@ public class TypeNotificationDTO {
     private boolean message;
     private boolean visit;
     private boolean newsletter;
-    private Long userId;
+    private UserDTO user;
 }

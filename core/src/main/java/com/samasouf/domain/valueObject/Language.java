@@ -1,4 +1,4 @@
-package com.samasouf.domain.common;
+package com.samasouf.domain.valueObject;
 
 import lombok.NoArgsConstructor;
 

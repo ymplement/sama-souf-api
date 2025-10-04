@@ -18,5 +18,5 @@ public class LandPreferenceDTO {
     private Double budgetMin;
     private Double budgetMax;
     private boolean isPushed;
-    private Long userId;
+    private UserDTO userId;
 }

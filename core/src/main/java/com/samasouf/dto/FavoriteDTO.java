@@ -14,6 +14,6 @@ import java.time.OffsetDateTime;
 public class FavoriteDTO {
     private Long favoriteId;
     private OffsetDateTime date;
-    private Long announcementId;
-    private Long userId;
+    private AnnouncementDTO announcementId;
+    private UserDTO userId;
 }

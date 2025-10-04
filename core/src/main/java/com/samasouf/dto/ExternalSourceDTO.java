@@ -14,5 +14,5 @@ public class ExternalSourceDTO {
     private String name;
     private String siteUrl;
     private String type;
-    private Long landId;
+    private LandDTO land;
 }

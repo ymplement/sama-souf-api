@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import java.time.OffsetDateTime;
 import java.util.List;
 
-import com.samasouf.domain.common.Language;
+import com.samasouf.domain.valueObject.Language;
 
 @Data
 @Builder
@@ -24,8 +24,8 @@ public class FaqDTO {
     private List<String> keywords;
     private OffsetDateTime createdAt;
     private OffsetDateTime updatedAt;
-    private Long createdById;
-    private Long updatedById;
+    private UserDTO createdById;
+    private UserDTO updatedById;
     private boolean isVisible;
     private Integer views;
 }

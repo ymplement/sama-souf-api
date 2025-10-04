@@ -21,8 +21,8 @@ public class LandDTO {
     private boolean isCertified;
     private String commodityJson;
     private String status;
-    private Long locationId;
-    private List<Long> mediaIds;
-    private List<Long> immersiveViewIds;
-    private List<Long> externalSourceIds;
+    private LocationDTO locationId;
+    private List<MediaDTO> mediaIds;
+    private List<ImmersiveViewDTO> immersiveViewIds;
+    private List<ExternalSourceDTO> externalSourceIds;
 }

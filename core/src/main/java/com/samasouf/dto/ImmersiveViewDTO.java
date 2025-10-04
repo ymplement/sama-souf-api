@@ -15,5 +15,5 @@ public class ImmersiveViewDTO {
     private String url;
     private boolean vrCompatible;
     private boolean premiumOnly;
-    private Long landId;
+    private LandDTO landId;
 }

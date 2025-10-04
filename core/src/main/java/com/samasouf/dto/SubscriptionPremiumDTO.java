@@ -17,5 +17,5 @@ public class SubscriptionPremiumDTO {
     private OffsetDateTime endDate;
     private String type;
     private String statut;
-    private Long userId;
+    private UserDTO userId;
 }

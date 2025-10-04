@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.Set;
 
-import com.samasouf.domain.common.AuthProvider;
+import com.samasouf.domain.valueObject.AuthProvider;
 
 @Data
 @Builder
@@ -29,7 +29,7 @@ public class UserDTO {
     private boolean isPhoneVerified;
     private boolean isEmailVerified;
     private boolean isActive;
-    private Set<Long> roleIds;
+    private Set<RoleDTO> roleIds;
     private Long securitySettingsId;
     private Long confidentialityId;
     private Long addressId;

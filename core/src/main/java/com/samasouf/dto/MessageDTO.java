@@ -14,9 +14,9 @@ import java.time.OffsetDateTime;
 @AllArgsConstructor
 public class MessageDTO {
     private Long messageId;
-    private Long authorId;
-    private Long recipientId;
-    private Long announcementId;
+    private UserDTO author;
+    private UserDTO recipient;
+    private AnnouncementDTO announcement;
     private String content;
     private OffsetDateTime sentAt;
     private LocalDateTime readAt;

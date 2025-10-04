@@ -21,7 +21,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.envers.Audited;
 
-import com.samasouf.domain.common.AnnouncementTransaction;
+import com.samasouf.domain.valueObject.AnnouncementStatus;
 
 @Setter
 @Getter
@@ -47,7 +47,7 @@ public class Announcement {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "transaction_type")
-    private AnnouncementTransaction announcementTransaction;
+    private AnnouncementStatus announcementTransaction;
 
     @Column(name = "startDate")
     private OffsetDateTime startDate;
@@ -68,7 +68,4 @@ public class Announcement {
 
     @OneToMany(mappedBy = "announcement", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<TransactionLand> transactions = new ArrayList<>();
-
-    @OneToMany(mappedBy = "announcement", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Document> documents = new ArrayList<>();
 }

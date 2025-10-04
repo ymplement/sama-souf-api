@@ -14,6 +14,6 @@ import java.time.OffsetDateTime;
 public class SearchDTO {
     private Long searchId;
     private OffsetDateTime date;
-    private Long announcementId;
+    private AnnouncementDTO announcementId;
     private Long userId;
 }

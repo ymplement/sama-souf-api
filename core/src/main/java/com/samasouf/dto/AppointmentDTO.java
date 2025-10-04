@@ -19,6 +19,6 @@ public class AppointmentDTO {
     private String type;
     private String proofOfVisit;
     private String note;
-    private Long userId;
-    private Long announcementId;
+    private UserDTO user;
+    private AnnouncementDTO announcement;
 }

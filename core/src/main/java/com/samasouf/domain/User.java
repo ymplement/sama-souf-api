@@ -24,7 +24,6 @@ import lombok.Setter;
 import org.hibernate.envers.Audited;
 
 import com.samasouf.domain.chat.Message;
-import com.samasouf.domain.common.AuthProvider;
 import com.samasouf.domain.params.Favorite;
 import com.samasouf.domain.params.LandPreference;
 import com.samasouf.domain.params.NotificationPreference;
@@ -34,6 +33,7 @@ import com.samasouf.domain.params.TypeNotification;
 import com.samasouf.domain.security.Confidentiality;
 import com.samasouf.domain.security.Role;
 import com.samasouf.domain.security.SecuritySettings;
+import com.samasouf.domain.valueObject.AuthProvider;
 
 @Setter
 @Getter

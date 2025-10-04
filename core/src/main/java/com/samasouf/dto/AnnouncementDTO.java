@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import java.time.OffsetDateTime;
 import java.util.List;
 
-import com.samasouf.domain.common.AnnouncementTransaction;
+import com.samasouf.domain.valueObject.AnnouncementStatus;
 
 @Data
 @Builder
@@ -20,12 +20,12 @@ public class AnnouncementDTO {
     private String description;
     private String status;
     private String type;
-    private AnnouncementTransaction announcementTransaction;
+    private AnnouncementStatus announcementTransaction;
     private OffsetDateTime startDate;
     private OffsetDateTime endDate;
-    private Long ownerId;
-    private Long landId;
-    private List<Long> appointmentIds;
-    private List<Long> transactionIds;
-    private List<Long> documentIds;
+    private UserDTO ownerId;
+    private LandDTO landId;
+    private List<AppointmentDTO> appointmentIds;
+    private List<TransactionLandDTO> transactionIds;
+    private List<DocumentDTO> documentIds;
 }
