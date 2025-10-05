@@ -10,7 +10,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
@@ -47,9 +46,12 @@ public class Land {
     @Column(name = "is_certified")
     private boolean isCertified;
 
-    @Lob
-    @Column(columnDefinition = "JSON", name = "commodity_json")
-    private String commodityJson; // JSON brut (ou @JdbcType(Json) si tu utilises Hibernate Types)
+    /*
+     * @Lob
+     * 
+     * @Column(columnDefinition = "TEXT", name = "commodity_json") private String
+     * commodityJson; // JSON stored as TEXT
+     */
 
     @Column(name = "status")
     private String status;

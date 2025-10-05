@@ -11,6 +11,7 @@ import com.samasouf.domain.Media;
 @Mapper(componentModel = "spring")
 public interface IMediaMapper {
 
+    @Mapping(target = "land", ignore = true) // Break circular reference
     MediaDTO toMediaDTO(Media media);
 
     // Helper method to extract image URLs from MediaDTO list

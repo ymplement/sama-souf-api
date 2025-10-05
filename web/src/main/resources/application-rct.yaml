@@ -1,0 +1,44 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/sama_souf_db
+    username: postgres
+    password: Nicola93
+    driver-class-name: org.postgresql.Driver
+    sql-script-encoding: UTF-8
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        use_sql_comments: true
+        generate_statistics: true
+        jdbc:
+          batch_size: 20
+        order_inserts: true
+        order_updates: true
+        envers:
+          audit_table_suffix: _AUD
+          revision_field_name: REV
+          revision_type_field_name: REVTYPE
+          store_data_at_delete: true
+          default_schema: public
+
+  sql:
+    init:
+      mode: never
+
+# Enhanced SQL Logging Configuration
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    org.hibernate.engine.transaction: DEBUG
+    org.hibernate.engine.jdbc: DEBUG
+    org.springframework.orm.jpa: DEBUG
+    org.springframework.data.jpa: DEBUG
+    com.samasouf: DEBUG
