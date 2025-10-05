@@ -1,19 +1,15 @@
 package com.samasouf.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter
+@Setter
 public class NotificationPreferenceDTO {
     private Long notificationPreferenceId;
     private boolean email;
     private boolean sms;
     private boolean push;
     private boolean marketing;
-    private UserDTO userId;
+    private UserDTO user;
 }

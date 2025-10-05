@@ -1,19 +1,19 @@
 package com.samasouf.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.OffsetDateTime;
 
-@Data
-@Builder
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class FavoriteDTO {
     private Long favoriteId;
     private OffsetDateTime date;
-    private AnnouncementDTO announcementId;
-    private UserDTO userId;
+    private AnnouncementDTO announcement;
+    private UserDTO user;
 }

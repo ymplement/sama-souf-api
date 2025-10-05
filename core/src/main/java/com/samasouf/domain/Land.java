@@ -11,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -53,6 +54,10 @@ public class Land {
     @Column(name = "status")
     private String status;
 
+    @ManyToOne
+    @JoinColumn(name = "announcement_id")
+    private Announcement announcement;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "location_id", referencedColumnName = "location_id")
     private Location location;
@@ -65,9 +70,12 @@ public class Land {
     private List<ImmersiveView> immersiveViews = new ArrayList<>();
 
     @OneToMany(mappedBy = "land", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<ExternalSource> externalSources = new ArrayList<>();
+    private List<Document> documents = new ArrayList<>();
 
     @OneToMany(mappedBy = "land", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Document> documents = new ArrayList<>();
+    private List<TransactionLand> transactionLands = new ArrayList<>();
+
+    @OneToMany(mappedBy = "land", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Appointment> appointments = new ArrayList<>();
 
 }

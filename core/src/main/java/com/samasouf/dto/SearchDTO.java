@@ -1,19 +1,15 @@
 package com.samasouf.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.OffsetDateTime;
 
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter
+@Setter
 public class SearchDTO {
     private Long searchId;
     private OffsetDateTime date;
-    private AnnouncementDTO announcementId;
+    private AnnouncementDTO announcement;
     private Long userId;
 }

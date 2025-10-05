@@ -1,22 +1,18 @@
 package com.samasouf.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter
+@Setter
 public class MessageDTO {
     private Long messageId;
     private UserDTO author;
     private UserDTO recipient;
-    private AnnouncementDTO announcement;
+    private LandDTO land;
     private String content;
     private OffsetDateTime sentAt;
     private LocalDateTime readAt;

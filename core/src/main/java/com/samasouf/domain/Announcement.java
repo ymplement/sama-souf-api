@@ -13,6 +13,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
@@ -59,13 +60,10 @@ public class Announcement {
     private User owner;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "land_id", referencedColumnName = "land_id")
-    private Land land;
-
-    // RDV / paiements
-    @OneToMany(mappedBy = "announcement", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Appointment> appointments = new ArrayList<>();
+    @JoinColumn(name = "external_source_id", referencedColumnName = "external_source_id")
+    private ExternalSource externalSource;
 
     @OneToMany(mappedBy = "announcement", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<TransactionLand> transactions = new ArrayList<>();
+    private List<Land> lands = new ArrayList<>();
+
 }

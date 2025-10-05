@@ -3,16 +3,16 @@ package com.samasouf.dto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Set;
 
 import com.samasouf.domain.valueObject.AuthProvider;
 
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter
+@Setter
 public class UserDTO {
     private Long userId;
     private String firstName;
@@ -29,7 +29,7 @@ public class UserDTO {
     private boolean isPhoneVerified;
     private boolean isEmailVerified;
     private boolean isActive;
-    private Set<RoleDTO> roleIds;
+    private Set<RoleDTO> roles;
     private Long securitySettingsId;
     private Long confidentialityId;
     private Long addressId;

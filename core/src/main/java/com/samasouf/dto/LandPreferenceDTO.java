@@ -1,14 +1,10 @@
 package com.samasouf.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter
+@Setter
 public class LandPreferenceDTO {
     private Long landPreferenceId;
     private String location;
@@ -18,5 +14,5 @@ public class LandPreferenceDTO {
     private Double budgetMin;
     private Double budgetMax;
     private boolean isPushed;
-    private UserDTO userId;
+    private UserDTO user;
 }

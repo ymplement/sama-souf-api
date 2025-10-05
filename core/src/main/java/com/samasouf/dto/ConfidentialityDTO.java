@@ -2,15 +2,11 @@ package com.samasouf.dto;
 
 import com.samasouf.domain.valueObject.Visibility;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter
+@Setter
 public class ConfidentialityDTO {
     private Long confidentialityId;
     private Visibility visibility;

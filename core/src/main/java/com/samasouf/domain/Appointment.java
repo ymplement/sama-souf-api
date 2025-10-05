@@ -46,6 +46,6 @@ public class Appointment {
     private User user; // qui a pris le RDV
 
     @ManyToOne
-    @JoinColumn(name = "announcement_id", referencedColumnName = "announcement_id")
-    private Announcement announcement;
+    @JoinColumn(name = "land_id", referencedColumnName = "land_id")
+    private Land land;
 }

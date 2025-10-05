@@ -3,17 +3,17 @@ package com.samasouf.dto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.OffsetDateTime;
 import java.util.List;
 
 import com.samasouf.domain.valueObject.AnnouncementStatus;
 
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter
+@Setter
 public class AnnouncementDTO {
     private Long announcementId;
     private String title;
@@ -23,9 +23,7 @@ public class AnnouncementDTO {
     private AnnouncementStatus announcementTransaction;
     private OffsetDateTime startDate;
     private OffsetDateTime endDate;
-    private UserDTO ownerId;
-    private LandDTO landId;
-    private List<AppointmentDTO> appointmentIds;
-    private List<TransactionLandDTO> transactionIds;
-    private List<DocumentDTO> documentIds;
+    private UserDTO owner;
+    private List<LandDTO> lands;
+    private ExternalSourceDTO externalSource;
 }

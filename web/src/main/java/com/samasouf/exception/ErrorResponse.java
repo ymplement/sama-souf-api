@@ -1,4 +1,4 @@
-package com.samasouf.controller.exception;
+package com.samasouf.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

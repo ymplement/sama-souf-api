@@ -1,19 +1,15 @@
 package com.samasouf.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.OffsetDateTime;
 import java.util.List;
 
 import com.samasouf.domain.valueObject.Language;
 
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter
+@Setter
 public class FaqDTO {
     private Long faqId;
     private Language lang;
@@ -24,8 +20,8 @@ public class FaqDTO {
     private List<String> keywords;
     private OffsetDateTime createdAt;
     private OffsetDateTime updatedAt;
-    private UserDTO createdById;
-    private UserDTO updatedById;
+    private UserDTO createdBy;
+    private UserDTO updatedBy;
     private boolean isVisible;
     private Integer views;
 }

@@ -1,16 +1,12 @@
 package com.samasouf.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter
+@Setter
 public class LandDTO {
     private Long landId;
     private String title;
@@ -21,8 +17,11 @@ public class LandDTO {
     private boolean isCertified;
     private String commodityJson;
     private String status;
-    private LocationDTO locationId;
-    private List<MediaDTO> mediaIds;
-    private List<ImmersiveViewDTO> immersiveViewIds;
-    private List<ExternalSourceDTO> externalSourceIds;
+    private LocationDTO location;
+    private List<MediaDTO> medias;
+    private List<ImmersiveViewDTO> immersiveViews;
+    private List<ExternalSourceDTO> externalSources;
+    private List<DocumentDTO> documents;
+    private List<TransactionLandDTO> transactionLands;
+    private List<AppointmentDTO> appointments;
 }

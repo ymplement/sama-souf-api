@@ -1,16 +1,12 @@
 package com.samasouf.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter
+@Setter
 public class DocumentDTO {
     private Long documentId;
     private String title;
@@ -18,5 +14,5 @@ public class DocumentDTO {
     private String description;
     private boolean verified;
     private LandDTO land;
-    private List<FileEntityDTO> fileIds;
+    private List<FileEntityDTO> fileEntities;
 }

@@ -50,6 +50,6 @@ public class TransactionLand {
     private User user; // payeur
 
     @ManyToOne
-    @JoinColumn(name = "announcement_id")
-    private Announcement announcement;
+    @JoinColumn(name = "land_id")
+    private Land land;
 }
