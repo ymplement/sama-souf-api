@@ -1,10 +1,8 @@
 package com.samasouf.command;
 
-import java.util.List;
-
 import com.samasouf.criteria.AnnouncementCriteria;
-import com.samasouf.dto.AnnouncementDTO;
+import com.samasouf.dto.response.AnnouncementListResponse;
 
 public interface IAnnouncementListCommand {
-    List<AnnouncementDTO> execute(AnnouncementCriteria criteria);
+    AnnouncementListResponse execute(AnnouncementCriteria criteria);
 }

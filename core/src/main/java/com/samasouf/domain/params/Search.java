@@ -11,7 +11,6 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.envers.Audited;
 
 import com.samasouf.domain.Announcement;
 import com.samasouf.domain.User;
@@ -20,7 +19,6 @@ import com.samasouf.domain.User;
 @Getter
 @Entity
 @Table(name = "search_log")
-@Audited
 public class Search {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "search_id_seq")

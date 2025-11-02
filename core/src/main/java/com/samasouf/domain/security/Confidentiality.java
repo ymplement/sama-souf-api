@@ -10,7 +10,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.envers.Audited;
 
 import com.samasouf.domain.valueObject.Visibility;
 
@@ -18,7 +17,6 @@ import com.samasouf.domain.valueObject.Visibility;
 @Setter
 @Entity
 @Table(name = "confidentiality")
-@Audited
 public class Confidentiality {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "confidentiality_id_seq")

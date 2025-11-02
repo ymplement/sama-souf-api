@@ -10,3 +10,8 @@ server:
   max-response-size: 10485760 # 10 MB
   servlet:
     context-path: /api
+
+jwt:
+  secret: lWme18XV+hCvyY2kb/oJM38TIo3cBVPDht+Pr+w4bP8=
+  access-token-expiration: 3600000 # 1 hour in milliseconds
+  refresh-token-expiration: 86400000 # 24 hours in milliseconds

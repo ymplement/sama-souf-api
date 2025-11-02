@@ -12,6 +12,7 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.envers.Audited;
+import org.hibernate.envers.RelationTargetAuditMode;
 
 @Setter
 @Getter
@@ -43,6 +44,7 @@ public class Appointment {
 
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
+    @Audited(targetAuditMode = RelationTargetAuditMode.NOT_AUDITED)
     private User user; // qui a pris le RDV
 
     @ManyToOne

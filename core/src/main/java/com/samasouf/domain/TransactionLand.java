@@ -13,6 +13,7 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.envers.Audited;
+import org.hibernate.envers.RelationTargetAuditMode;
 
 @Setter
 @Getter
@@ -24,7 +25,7 @@ public class TransactionLand {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "transaction_land_id_seq")
     private Long transaction_land_id;
 
-    @Column(name = "transaction_date")
+    @Column(name = "transaction_type")
     private String type; // reservation, sale, rent...
 
     @Column(name = "status")
@@ -47,6 +48,7 @@ public class TransactionLand {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @Audited(targetAuditMode = RelationTargetAuditMode.NOT_AUDITED)
     private User user; // payeur
 
     @ManyToOne

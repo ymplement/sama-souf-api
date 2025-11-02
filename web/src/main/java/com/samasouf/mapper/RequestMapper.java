@@ -1,29 +1,22 @@
 package com.samasouf.mapper;
 
-import org.springframework.stereotype.Component;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.MappingConstants;
 
 import com.samasouf.criteria.AnnouncementCriteria;
+import com.samasouf.criteria.LandCriteria;
 import com.samasouf.request.AnnouncementRequest;
+import com.samasouf.request.LandRequest;
 
-@Component
-public class RequestMapper {
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
+public interface RequestMapper {
 
-    public AnnouncementCriteria toAnnouncementCriteria(AnnouncementRequest request) {
-        if (request == null) {
-            return new AnnouncementCriteria();
-        }
+    @Mapping(source = "page", target = "pageNumber")
+    @Mapping(source = "size", target = "pageSize")
+    AnnouncementCriteria toAnnouncementCriteria(AnnouncementRequest request);
 
-        AnnouncementCriteria criteria = new AnnouncementCriteria();
-        criteria.setTitle(request.getTitle());
-        criteria.setDescription(request.getDescription());
-        criteria.setStatus(request.getStatus());
-        criteria.setType(request.getType());
-        criteria.setAnnouncementTransaction(request.getAnnouncementTransaction());
-        criteria.setStartDate(request.getStartDate());
-        criteria.setEndDate(request.getEndDate());
-        criteria.setPageNumber(request.getPage());
-        criteria.setPageSize(request.getSize());
-
-        return criteria;
-    }
+    @Mapping(source = "page", target = "pageNumber")
+    @Mapping(source = "size", target = "pageSize")
+    LandCriteria toLandCriteria(LandRequest request);
 }

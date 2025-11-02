@@ -20,6 +20,7 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.envers.Audited;
+import org.hibernate.envers.RelationTargetAuditMode;
 
 import com.samasouf.domain.valueObject.AnnouncementStatus;
 
@@ -56,6 +57,7 @@ public class Announcement {
 
     @ManyToOne
     @JoinColumn(name = "owner_id", referencedColumnName = "user_id")
+    @Audited(targetAuditMode = RelationTargetAuditMode.NOT_AUDITED)
     private User owner;
 
     @OneToOne(cascade = CascadeType.ALL)

@@ -14,13 +14,11 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.envers.Audited;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "role")
-@Audited
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "role_id_seq")

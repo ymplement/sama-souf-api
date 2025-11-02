@@ -21,8 +21,6 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.envers.Audited;
-
 import com.samasouf.domain.chat.Message;
 import com.samasouf.domain.params.Favorite;
 import com.samasouf.domain.params.LandPreference;
@@ -39,7 +37,6 @@ import com.samasouf.domain.valueObject.AuthProvider;
 @Getter
 @Entity
 @Table(name = "app_user")
-@Audited
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_id_seq")

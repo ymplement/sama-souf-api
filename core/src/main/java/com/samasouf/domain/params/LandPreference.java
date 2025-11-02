@@ -10,7 +10,6 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.envers.Audited;
 
 import com.samasouf.domain.User;
 
@@ -18,7 +17,6 @@ import com.samasouf.domain.User;
 @Getter
 @Entity
 @Table(name = "land_preference")
-@Audited
 public class LandPreference {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "land_preference_id_seq")

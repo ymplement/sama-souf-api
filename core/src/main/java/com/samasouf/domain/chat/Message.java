@@ -14,6 +14,7 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.envers.Audited;
+import org.hibernate.envers.RelationTargetAuditMode;
 
 import com.samasouf.domain.Announcement;
 import com.samasouf.domain.User;
@@ -30,10 +31,12 @@ public class Message {
 
     @ManyToOne
     @JoinColumn(name = "author_id")
+    @Audited(targetAuditMode = RelationTargetAuditMode.NOT_AUDITED)
     private User author;
 
     @ManyToOne
     @JoinColumn(name = "recipient_id", referencedColumnName = "user_id")
+    @Audited(targetAuditMode = RelationTargetAuditMode.NOT_AUDITED)
     private User recipient;
 
     @ManyToOne

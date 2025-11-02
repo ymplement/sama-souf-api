@@ -1,7 +1,9 @@
 package com.samasouf.domain;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -10,6 +12,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
@@ -17,6 +21,7 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.envers.Audited;
+import org.hibernate.envers.RelationTargetAuditMode;
 
 @Setter
 @Getter
@@ -46,12 +51,8 @@ public class Land {
     @Column(name = "is_certified")
     private boolean isCertified;
 
-    /*
-     * @Lob
-     * 
-     * @Column(columnDefinition = "TEXT", name = "commodity_json") private String
-     * commodityJson; // JSON stored as TEXT
-     */
+    @Column(columnDefinition = "TEXT", name = "commodity_json")
+    private String commodityJson;
 
     @Column(name = "status")
     private String status;
@@ -62,6 +63,7 @@ public class Land {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "location_id", referencedColumnName = "location_id")
+    @Audited(targetAuditMode = RelationTargetAuditMode.NOT_AUDITED)
     private Location location;
 
     // médias
@@ -79,5 +81,9 @@ public class Land {
 
     @OneToMany(mappedBy = "land", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Appointment> appointments = new ArrayList<>();
+
+    @ManyToMany
+    @JoinTable(name = "land_commodity", joinColumns = @JoinColumn(name = "land_id"), inverseJoinColumns = @JoinColumn(name = "commodity_id"))
+    private Set<Commodity> commodities = new HashSet<>();
 
 }
